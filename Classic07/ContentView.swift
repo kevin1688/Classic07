@@ -8,9 +8,23 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var cardOnOff = false
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        ZStack {
+            NavigationView{
+                List{
+                    NavigationLink {
+                        CardDemoView()
+                    } label: {
+                        Text("帶出CardDemoView")
+                    }
+                }
+                .listRowBackground(Color.clear)
+            }
+        }
+        
     }
 }
 
@@ -19,3 +33,4 @@ struct ContentView_Previews: PreviewProvider {
         ContentView()
     }
 }
+
